@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--父项目的坐标，如果子项目中没有配置相关的信息，那么使用父项目中的配置。坐标包括：groupID,artifactId和version。-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>xyz.fusheng.core</groupId>
+    <artifactId>code-dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>code-dependencies</name>
+    <description>统一依赖版本管理</description>
+    <packaging>pom</packaging>
+
+    <!-- 该模块设计参考 spring-boot-dependencies -->
+
+    <properties>
+        <spring-boot-starter.version>2.2.6.RELEASE</spring-boot-starter.version>
+
+        <java.version>8</java.version>
+        <springboot.version>2.2.6.RELEASE</springboot.version>
+        <!-- 注册&配置中心 -->
+        <nacos.starter.version>0.2.7</nacos.starter.version>
+        <nacos.client.version>1.2.1</nacos.client.version>
+        <!-- 接口文档 -->
+        <swagger2.version>2.9.2</swagger2.version>
+        <knife4j.version>2.0.1</knife4j.version>
+        <!-- 序列化 -->
+        <lombok.version>1.18.24</lombok.version>
+        <jackson.version>2.13.4</jackson.version>
+        <fastjson.version>1.2.73</fastjson.version>
+        <!-- 工具包 -->
+        <hutool.version>5.1.4</hutool.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <druid.version>1.1.6</druid.version>
+        <user-agent.version>1.19</user-agent.version>
+        <jjwt.version>0.9.0</jjwt.version>
+        <!-- orm -->
+        <mysql.version>8.0.19</mysql.version>
+        <mybatisplus.version>3.5.2</mybatisplus.version>
+        <velocity-engine.version>2.1</velocity-engine.version>
+        <druid.version>1.1.6</druid.version>
+        <postgresql.version>42.5.1</postgresql.version>
+
+        <!-- NFS -->
+        <aliyun-oss.version>3.11.2</aliyun-oss.version>
+
+        <!-- redisson 分布式锁 -->
+        <redisson.version>3.19.0</redisson.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- hutool工具类 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- Swagger 依赖 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <!-- 拓展 Swagger2 UI -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- MyBatisPlus 生成器 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!-- Velocity 模版引擎 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine.version}</version>
+            </dependency>
+            <!--浏览器解析客户端操作系统、浏览器等-->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${user-agent.version}</version>
+            </dependency>
+            <!--jjwt -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <!--oss-->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-oss.version}</version>
+            </dependency>
+            <!--redisson-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
